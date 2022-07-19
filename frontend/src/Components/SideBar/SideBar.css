@@ -1,0 +1,47 @@
+
+.sidebar_out{
+    position:fixed;
+    left:0%;
+    width:15rem;
+    height:100%;
+    top:0%;
+    background-color: rgba(11, 9, 107, 0.784);
+}
+.sidebar_hidden{
+    visibility: hidden;
+}
+
+.sidebar_name{
+    position:fixed;
+    bottom: 1rem;
+    left:1rem;
+    text-align: center;
+    /* top: 100rem;; */
+}
+
+.dropdown_exist{
+    position:absolute;
+    left:0%;
+    top:0rem;
+    width:5rem;
+    font-size: xx-large;
+    background-color: rgba(11, 9, 107, 0.784);
+    color:white;
+    border:0ch;
+
+}
+.btn_flush{border: 0rem;
+background-color: transparent;}
+
+.sidebar_text_div{
+    margin-top: 5rem;
+    font-size: x-large;
+    color: white;
+}
+
+.sidebar_text{
+    font-size: x-large;
+    color: white;
+    font-style: normal;
+    text-decoration: none;
+}
