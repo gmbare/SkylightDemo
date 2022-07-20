@@ -4,6 +4,8 @@
     font-size:x-large;
 }
 
+.font-size-xlarge{font-size: x-large;}
+
 .icon_size{
     font-size: x-large;
 }
@@ -14,7 +16,7 @@
 .th_fp{left:2rem;column-span: 2;}
 .th_pd{left:10rem;}
 .th_ingest{left:20rem;}
-.vis_hidden{visibility: hidden;}
+.vis_hidden{display: none;}
 
 .td_ds{padding-left:1rem;width: fit-content;}
 table,th,td{

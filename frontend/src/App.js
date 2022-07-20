@@ -4,6 +4,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import LandingPage from './Pages/LandingPage/LandingPage';
 import SideBar from './Components/SideBar/SideBar.js';
 import DataSearch from './Pages/DataSearch/DataSearch';
+import ProductInformation from './Pages/ProductInformation/ProductInformation';
 
 function App() {
   return (
@@ -20,6 +21,12 @@ function App() {
       path="/"
       element={
         <LandingPage />
+      }
+    />
+    <Route
+      path="/:Product_definition/Product_information"
+      element={
+        <ProductInformation />
       }
     />
   </Routes>

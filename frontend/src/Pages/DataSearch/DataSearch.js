@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
-import { BiDotsVerticalRounded } from 'react-icons/bi'
 import './DataSearch.css'
 import { data } from '../../Data/data2'
+import DataRouteTable from './DataRouteSearchTable/DataRouteSearchTable';
+import DataManagementTable from './DataManagementTable/DataManagementTable';
+
 
 const DataSearch = (props) => {
     const [searchResults, setsearchResults] = useState(data)
@@ -23,6 +25,15 @@ const DataSearch = (props) => {
     const handleMoreButton = async (e, key) => {
         e.preventDefault()
         console.log(key)
+    }
+
+    const handleTableSwitch = async (e) => {
+        // e.preventDefault()
+        document.getElementById(`div_${e.target.id}`).className = "center_table_div"
+        console.log("success")
+        console.log(e.target.id)
+        console.log(e.target.value)
+        document.getElementById(`div_${e.target.value}`).className = "vis_hidden"
 
     }
 
@@ -30,8 +41,7 @@ const DataSearch = (props) => {
         <form onSubmit={handleSearch}>
             <FaSearch className='icon_size' /><input className='searchbar_size' type='text' id='searchBar' />
         </form>
-        <div>
-            <h3>Search Results</h3>
+        <div className='font-size-xlarge'>
             <label htmlFor="SearchBy">Filters:</label>
             <select name="SearchBy" id="SearchBy">
                 <option value="File_name">File Name</option>
@@ -39,46 +49,18 @@ const DataSearch = (props) => {
                 <option value="Product_definition">Product Definition</option>
                 <option value="Customers">Customers</option>
             </select>
+            <h3>Search Results</h3>
+            <label htmlFor="DataRoute">Data Routing:</label>
+            <input type="radio" id="DataRoute" name="Table-Type" onChange={(e) => {handleTableSwitch(e)}} value="DataManagement" defaultChecked/> 
+            <label htmlFor="DataRouting">Data Management:</label>
+            <input type="radio" id="DataManagement" name="Table-Type" value="DataRoute" onChange={(e) => {handleTableSwitch(e)}}/>
         </div>
-        <div className='center_table_div'>
-        <table className='center_table'>
-            <thead>
-                <tr>
-                    <th colSpan={9}>File Pattern</th>
-                    <th colSpan={4}>Product Definition</th>
-                    <th >Last Ingest</th>
-                    {/* <th className='th_ds'>Cycle Time</th>
-            <th className='th_ds'>Resolution</th> */}
-                    <th className='vis_hidden'> </th>
-                </tr>
-            </thead>
-            <tbody>
-                {searchResults.map((result, key) => {
-                    try {
-                        if (key < numDisplayResults) {
-                            return (
-                                <tr key={key} id={`${key}`}>
-                                    <td colSpan={9}>{`${result.File_name}`}</td>
-                                    <td colSpan={4}>{`${result.Product_definition}`}</td>
-                                    <td >{`${result.Last_ingested}`}</td>
-                                    <td>
-                                        <div class="dropdown">
-                                            <button class="dropbtn"><BiDotsVerticalRounded/></button>
-                                            <div class="dropdown-content">
-                                                <a href="#">Data Routing</a>
-                                                <a href="#">Data Management</a>
-                                                <a href="#">Subscriptions</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    {/* <td className='td_more' id={`${key}-buttons`}><button className='flush_btn' onClick={(e) => {handleMoreButton(e,key)}}><BiDotsVerticalRounded/></button></td> */}
-                                </tr>
-                            );
-                        }
-                    } catch (error) { }
-                })}
-            </tbody>
-        </table>
+
+        <div className='center_table_div' id="div_DataRoute">
+        <DataRouteTable numResults={numResults} searchResults={searchResults} numDisplayResults={numDisplayResults} />
+        </div>
+        <div className='vis_hidden' id="div_DataManagement">
+        <DataManagementTable numResults={numResults} searchResults={searchResults} numDisplayResults={numDisplayResults} />
         </div>
         <div className='margin-top-5rem '>
             <label htmlFor="resultCount">Filters:</label>
