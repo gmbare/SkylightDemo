@@ -4,6 +4,9 @@ import { BiDotsVerticalRounded } from 'react-icons/bi'
 import {TbEdit} from 'react-icons/tb'
 import {TiShoppingCart} from 'react-icons/ti'
 import './Subscription_Main.css'
+import Subscription_Edit from '../Subscription_New/Subscription_Edit';
+import Subscription_New from '../Subscription_New/Subscription_New';
+import Subscription_Product from '../Subscription_Products/Subscription_Product';
 
 const Subscription_Main = (props) => {
     return ( <div>
@@ -28,13 +31,18 @@ const Subscription_Main = (props) => {
                             <td>Local</td>
                             <td><FcOk/></td>
                             <td><div className='title_left-align'>
-                                <TbEdit className='inline_block font-xlarge'/>
-                                <TiShoppingCart className='inline_block font-xlarge'/>
+                            <button className="mybtn"  id="myBtn" onClick={(e) => document.getElementById("editModal").style.display = "block"}><TbEdit className='inline_block font-xlarge'/></button> 
+                            <button className="mybtn"  id="myBtn" onClick={(e) => document.getElementById("subModal").style.display = "block"}><TiShoppingCart className='inline_block font-xlarge'/></button>  
+                                
                                 <div className="dropdown inline_block">
                                     <button className="dropbtn"><BiDotsVerticalRounded className='inline_block font-xlarge'/></button>
                                     <div className="dropdown-content">
                                         {/* <Link to={`/${result.Product_definition}/Product_Information`}>Data Routing</Link> */}
-                                        <a href="#">Edit</a>
+                                        <a href="#">Reship</a>
+                                        <a href="#">Show Stats</a>
+                                        <a href="#">Stop</a>
+                                        <a href="#">Start</a>
+                                        <a href="#">Copy</a>
                                         <a href="#">Delete</a>
                                     </div>
                                 </div>
@@ -47,13 +55,17 @@ const Subscription_Main = (props) => {
                             <td>sftp://exampleUser@skylight.digital</td>
                             <td><FcOk/></td>
                             <td><div className='title_left-align'>
-                                <TbEdit className='inline_block font-xlarge'/>
-                                <TiShoppingCart className='inline_block font-xlarge'/>
+                            <button className="mybtn"  id="myBtn" onClick={(e) => document.getElementById("editModal").style.display = "block"}><TbEdit className='inline_block font-xlarge'/></button> 
+                            <button className="mybtn"  id="myBtn" onClick={(e) => document.getElementById("subModal").style.display = "block"}><TiShoppingCart className='inline_block font-xlarge'/></button>  
                                 <div className="dropdown inline_block">
                                     <button className="dropbtn"><BiDotsVerticalRounded className='inline_block font-xlarge'/></button>
                                     <div className="dropdown-content">
                                         {/* <Link to={`/${result.Product_definition}/Product_Information`}>Data Routing</Link> */}
-                                        <a href="#">Edit</a>
+                                        <a href="#">Reship</a>
+                                        <a href="#">Show Stats</a>
+                                        <a href="#">Stop</a>
+                                        <a href="#">Start</a>
+                                        <a href="#">Copy</a>
                                         <a href="#">Delete</a>
                                     </div>
                                 </div>
@@ -66,13 +78,17 @@ const Subscription_Main = (props) => {
                             <td>sftp://exampleUser@123:45:678</td>
                             <td><FcHighPriority/></td>
                             <td><div className='title_left-align'>
-                                <TbEdit className='inline_block font-xlarge'/>
-                                <TiShoppingCart className='inline_block font-xlarge'/>
+                            <button className="mybtn" id="myBtn" onClick={(e) => document.getElementById("editModal").style.display = "block"}><TbEdit className='inline_block font-xlarge'/></button> 
+                            <button className="mybtn"  id="myBtn" onClick={(e) => document.getElementById("subModal").style.display = "block"}><TiShoppingCart className='inline_block font-xlarge'/></button>  
                                 <div className="dropdown inline_block">
                                     <button className="dropbtn"><BiDotsVerticalRounded className='inline_block font-xlarge'/></button>
                                     <div className="dropdown-content">
                                         {/* <Link to={`/${result.Product_definition}/Product_Information`}>Data Routing</Link> */}
-                                        <a href="#">Edit</a>
+                                        <a href="#">Reship</a>
+                                        <a href="#">Show Stats</a>
+                                        <a href="#">Stop</a>
+                                        <a href="#">Start</a>
+                                        <a href="#">Copy</a>
                                         <a href="#">Delete</a>
                                     </div>
                                 </div>
@@ -81,19 +97,29 @@ const Subscription_Main = (props) => {
                         </tr>
                     </tbody>
                 </table>
+        <button id="myBtn" onClick={(e) => document.getElementById("myModal").style.display = "block"} className='left'>Create New</button>
         </div>
-        <button id="myBtn" onClick={(e) => document.getElementById("myModal").style.display = "block"}>Open Modal</button>
 
 {/* <!-- The Modal --> */}
 <div id="myModal" class="modal">
-
   {/* <!-- Modal content --> */}
   <div class="modal-content">
-    <span class="close" onClick={(e) => document.getElementById("myModal").style.display = "none"}>&times;</span>
-    <p>Some text in the Modal..</p>
+    <Subscription_New/>
   </div>
-
 </div>
+<div id="editModal" class="modal">
+  {/* <!-- Modal content --> */}
+  <div class="modal-content">
+    <Subscription_Edit/>
+  </div>
+</div>
+<div id="subModal" class="modal">
+  {/* <!-- Modal content --> */}
+  <div class="modal-content">
+    <Subscription_Product/>
+  </div>
+</div>
+
     </div>);
 }
  

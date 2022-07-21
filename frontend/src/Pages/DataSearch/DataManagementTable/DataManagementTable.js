@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BiDotsVerticalRounded } from 'react-icons/bi'
+import { Link } from 'react-router-dom';
 
 const DataManagementTable = (props) => {
     return ( <table className='center_table'>
@@ -30,7 +31,7 @@ const DataManagementTable = (props) => {
                                 <div className="dropdown">
                                     <button className="dropbtn"><BiDotsVerticalRounded/></button>
                                     <div className="dropdown-content">
-                                        <a href="#">Data Routing</a>
+                                        <Link to={`/${result.Product_definition}/Product_Information`}>Data Routing</Link>
                                         <a href="#">Data Management</a>
                                         <a href="#">Subscriptions</a>
                                     </div>

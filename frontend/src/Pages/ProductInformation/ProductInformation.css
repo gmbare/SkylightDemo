@@ -1,1 +1,17 @@
 .font-size-xlarge{font-size: x-large;}
+.nowrap{white-space: nowrap;}
+
+.inline_block{
+    margin-left: 1rem;
+    display: inline-block;
+}
+
+.inline_margin_left15{left: 15rem;
+position: relative;}
+
+.float_left{position:relative;
+    left:-15rem;}
+
+.top-right{position:absolute; }
+
+
