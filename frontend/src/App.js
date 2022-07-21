@@ -5,6 +5,7 @@ import LandingPage from './Pages/LandingPage/LandingPage';
 import SideBar from './Components/SideBar/SideBar.js';
 import DataSearch from './Pages/DataSearch/DataSearch';
 import ProductInformation from './Pages/ProductInformation/ProductInformation';
+import Subimage from './Pages/Subscriptions/Sub-image/Sub-image';
 import Subscription_Main from './Pages/Subscriptions/Subscription_Main/Subscription_Main';
 
 function App() {
@@ -15,6 +16,14 @@ function App() {
       element={
         // <PrivateRoute>
         <DataSearch />
+        // </PrivateRoute>
+      }
+    />
+    <Route
+      path="/Subimage"
+      element={
+        // <PrivateRoute>
+        <Subimage />
         // </PrivateRoute>
       }
     />

@@ -29,7 +29,8 @@ const DataRouteTable = (props) => {
                                     <div className="dropdown-content">
                                         <Link to={`/${result.Product_definition}/Product_Information`}>Data Routing</Link>
                                         <a href="#">Data Management</a>
-                                        <a href="#">Subscriptions</a>
+                                        <Link to="/Subimage"> Subscriptions </Link>
+                                        {/* <a href="#">Subscriptions</a> */}
                                     </div>
                                 </div>
                             </td>

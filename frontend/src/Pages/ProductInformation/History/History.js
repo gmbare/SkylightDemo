@@ -29,7 +29,7 @@ const ProductHistory = (props) => {
                                     <div className="dropdown-content">
                                         {/* <Link to={`/${result.Product_definition}/Product_Information`}>Reship</Link> */}
                                         <a href="#">Reship</a>
-                                        <a href="#">Subscriptions</a>
+                                        <a href="#">View Logs</a>
                                     </div>
                                 </div>
                             </td>

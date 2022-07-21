@@ -6,7 +6,7 @@ const Subscription_Edit = (props) => {
     return ( <div><span className="close" onClick={(e) => document.getElementById("editModal").style.display = "none"}>&times;</span>
     <div> 
         <h1>File Details</h1>
-        <div className='font-size-xlarge'>
+        <div className='font-size-xlarge '>
             <p className='center inline_block '>Organization: <input type="text" className='inline_block' value="Example Pre-filled"/> </p>
             <p>Name: *<input type="text" value="Example Pre-filled"/> </p> 
             <label htmlFor="SearchBy">Type:</label>
@@ -14,7 +14,7 @@ const Subscription_Edit = (props) => {
                 <option value="File_name">Local</option>
                 <option value="Model_name">SFTP</option>
                 <option value="Product_definition">FTP</option>
-                <option value="Customers">Example</option>
+                <option value="Customers">Pull</option>
             </select>
             <br/>
             {/* <p>File Source <input type="text" /> </p> */}
