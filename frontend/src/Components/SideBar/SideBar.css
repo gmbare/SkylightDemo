@@ -8,7 +8,7 @@
     background-color: rgba(11, 9, 107, 0.784);
 }
 .sidebar_hidden{
-    visibility: hidden;
+    display: none;
 }
 
 .sidebar_name{

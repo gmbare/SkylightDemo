@@ -5,6 +5,7 @@ import LandingPage from './Pages/LandingPage/LandingPage';
 import SideBar from './Components/SideBar/SideBar.js';
 import DataSearch from './Pages/DataSearch/DataSearch';
 import ProductInformation from './Pages/ProductInformation/ProductInformation';
+import Subscription_Main from './Pages/Subscriptions/Subscription_Main/Subscription_Main';
 
 function App() {
   return (
@@ -27,6 +28,12 @@ function App() {
       path="/:Product_definition/Product_information"
       element={
         <ProductInformation />
+      }
+    />
+    <Route
+      path="/subscriptions"
+      element={
+        <Subscription_Main/>
       }
     />
   </Routes>
